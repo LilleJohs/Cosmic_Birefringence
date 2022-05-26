@@ -1,3 +1,6 @@
+# The ordering of the frequency bands is a bit weird, but the reason is explained in the
+# params variable in run_cosmic_birefringence_analysis.py
+
 maps_param = {
 	'030': {
 		'data_split': ['A', 'B'],
@@ -13,7 +16,7 @@ maps_param = {
 	},
 	'K': {
 		# The code was initially coded to only support channels with time or detectors splits.
-		# K and Ka only have one map each, so I treat the as two time split maps. They each have their own
+		# K and Ka only have one map each, so I treat the as two detector split maps. They each have their own
 		# miscalibration angle. The only problem is doing a frequency dependence search for beta. But
 		# I have a solution for that in the parameter file used for cb.py
 		'data_split': ['1', 'a1'],

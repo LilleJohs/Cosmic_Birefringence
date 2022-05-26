@@ -9,7 +9,7 @@ arXiv:2006.15982, arXiv:2011.11254, arXiv:2201.07682 and arXiv:2201.13347.
 There is a lot you need before being able to reproduce the results. Here, we outline all the steps that need to be done
 
 ## 1) Getting the data
-First you need the Planck and WMAP maps. The detector split maps of Planck Data Release 4 (NPIPE) can be found on NERSC.
+First, you need the Planck and WMAP maps. The detector split maps of Planck Data Release 4 (NPIPE) can be found on NERSC.
 Unfortunately, it does not seem like detector split maps are available on the Planck Legacy Archive.
 
 The WMAP maps are available here: https://lambda.gsfc.nasa.gov/product/wmap/dr5/maps_da_r9_i_9yr_get.html
@@ -18,7 +18,7 @@ Second, you need beam transfer functions. For NPIPE, they are also avalable on N
 And for WMAP, they can be found here https://lambda.gsfc.nasa.gov/product/wmap/dr5/beam_xfer_get.html
 
 Third, you need the masks. They can be found here: https://drive.google.com/file/d/1uZzBdv4eICmgWu7Kw7BXF6TioFY4S6FH/view?usp=sharing
-Put them in the generate_observed_power_spectra/masks folder. The sky fraction f_sky is already produced in the f.npy file. But feel free to double check.
+Put them in the `generate_observed_power_spectra/masks` folder. The sky fraction f_sky is already produced in the `f.npy` file. But feel free to double check.
 
 ## 2) Install PolSpice
 
@@ -31,7 +31,7 @@ Now, you need to run PolSpice. This is done through the file `make_cl_files_pols
 through all combinations for both masks.
 
 I highly recommend that you first only analyse HFI. This runs faster and is easier to debug.
-To do that, just switch `from hfi_lfi_wmap_eb import maps_param` in line 4 to `from hfi_eb import maps_param`.
+To do that, just switch `from hfi_lfi_wmap_eb import maps_param` to `from hfi_eb import maps_param` in `make_cl_files_polspice.py`.
 This needs to be done in `beam_corrected_lcdm_spectra.py` and `correct_format_observed_cl.py` as well.
 These parameter files can be found in the `parameter_files` folder. You need to give the parameter file
 the right path to the maps.
@@ -47,8 +47,8 @@ These files are stored in the `pre_proc` folder.
 Now you are ready to run it!
 
 The file `run_cosmic_birefringence_analysis.py` runs the analysis on the two masks.
-As mentioned, please run HFI only first. Doing Planck+WMAP takes time,
-so make sure that a HFI only run works first.
+As mentioned, please run HFI-only first. Doing Planck+WMAP takes time,
+so make sure that HFI-only works first.
 
 Please also read the comments in `run_cosmic_birefringence_analysis.py` to get a better
 understanding of what the different parameters in the `params` variable do.
