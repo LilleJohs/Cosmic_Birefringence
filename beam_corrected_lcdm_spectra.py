@@ -8,6 +8,10 @@ import sys
 sys.path.append('parameter_files/')
 from hfi_lfi_wmap_eb import maps_param
 
+# If you only work with HFI
+# from hfi_eb import maps_param
+
+
 # This file gets the theoretical LCDM parameters from CAMB, then beam smooth them
 # and stores them in a fileformat that cb.py can read.
 

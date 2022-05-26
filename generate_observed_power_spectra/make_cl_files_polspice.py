@@ -2,14 +2,22 @@ import subprocess
 import sys
 sys.path.append('../parameter_files/')
 from hfi_lfi_wmap_eb import maps_param
+# If you only work with HFI
+# from hfi_eb import maps_param
 
+
+
+# This file generates the observed power spectra and puts them in the 'cl_wmap_hfi_lfi' folder.
+# There are two subfolders: mask_percent_0 which doesnt include the Galactic mask,
+# and mask_percent_30 which includes the Galactic masks that excludes roughly 30% of the sky
 
 f = open('param_skeleton.txt', 'r+')
-#f = open('param_experimental_skeleton.txt', 'r+')
 
 mask_root = 'masks/combined_ps_co_{}_{}.fits'
 
 cl_out_folder = 'cl_wmap_hfi_lfi/'
+# If you only work with HFI
+# cl_out_folder = 'cl_hfi/'
 
 
 mask_list = ['0', '30']
@@ -38,7 +46,8 @@ for h, mask in enumerate(mask_list):
 			for freq2, freq2_param in maps_param.items():
 				for l in range(2):
 					if (j*2 + l < i*2 + k):
-						#Only get upper triangle
+						# We dont need to generate the power spectra for 100A x 100B and 100B x 100A
+						# This part makes sure we only get one of them
 						continue
 					weightfile2 = mask_root.format(mask, str(freq2_param['n_side']))
 					

@@ -27,10 +27,10 @@ I used version v03-07-03.
 
 ## 3) Get observed power spectra, psi_ell and LCDM spectra
 
-Now, you need to run PolSpice. This is done through the file make_cl_files_polspice.py which runs
+Now, you need to run PolSpice. This is done through the file `make_cl_files_polspice.py` which runs
 through all combinations for both masks.
 
-I highly recommend that first only analyse HFI. This runs faster and is easier to debug.
+I highly recommend that you first only analyse HFI. This runs faster and is easier to debug.
 To do that, just switch `from hfi_lfi_wmap_eb import maps_param` in line 4 to `from hfi_eb import maps_param`.
 This needs to be done in `beam_corrected_lcdm_spectra.py` and `correct_format_observed_cl.py` as well.
 These parameter files can be found in the `parameter_files` folder. You need to give the parameter file
@@ -40,6 +40,7 @@ Once you have the observed power spectra in .dat files, you can generate psi_ell
 
 Then you can run `beam_corrected_lcdm_spectra.py` and `correct_format_observed_cl.py`. These files
 generate the beam smoothed LCDM spectra and the observed spectra in file formats that `cb.py` can read.
+These files are stored in the `pre_proc` folder.
 
 ## 4) Run it!
 
@@ -51,6 +52,9 @@ so make sure that a HFI only run works first.
 
 Please also read the comments in `run_cosmic_birefringence_analysis.py` to get a better
 understanding of what the different parameters in the `params` variable do.
+
+`cb.py` outputs a chain file in the `chains` folder that you are free to do all your analysis on.
+It also creates a corner plot that can be found in `img/`
 
 ## Anything not working?
 Please let me know if you run into any problems or if anything is unclear!

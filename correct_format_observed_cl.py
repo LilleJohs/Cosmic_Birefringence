@@ -5,6 +5,10 @@ import sys
 sys.path.append('parameter_files/')
 from hfi_lfi_wmap_eb import maps_param
 
+# If you only work with HFI
+# from hfi_eb import maps_param
+
+
 # This file takes the observed power spectra from PolSpice and puts them into a format
 # that cb.py can read. It does not alter the spectra
 
@@ -14,6 +18,10 @@ nob = len(maps_param.keys())
 size = tools.size(nob)
 
 main_data_set = 'cl_wmap_hfi_lfi'
+
+# If you only work with HFI
+# main_data_set = 'cl_hfi'
+
 each_folder = 'mask_percent_{}'
 
 output_folder = main_data_set
