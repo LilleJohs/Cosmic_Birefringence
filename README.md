@@ -1,12 +1,19 @@
 # Cosmic Birefringence
 
 This code reproduces the results of arXiv:2205.xxxxx where Planck and WMAP polarization data are jointly sampled
-to measure the cosmic birefringence angle. The details behind the method of analysis can be found in arXiv:1904.12440,
-arXiv:2006.15982, arXiv:2011.11254, arXiv:2201.07682 and arXiv:2201.13347. 
+to measure the cosmic birefringence angle. The details behind the method of analysis can be found in 
+
+* Y. Minami et al. Simultaneous determination of the cosmic birefringence and miscalibrated polarisation angles from CMB experiments, Progress of Theoreti-
+cal and Experimental Physics 2019, 083E02 (2019), arXiv:1904.12440 [astro-ph.CO]
+* Y. Minami and E. Komatsu, Progress of Theoretical and Experimental Physics 2020, 103E02 (2020),
+arXiv:2006.15982 [astro-ph.CO]
+* Y. Minami and E. Komatsu, Phys. Rev. Lett. 125, 221301 (2020), arXiv:2011.11254 [astro-ph.CO]
+* Diego-Palazuelos et al., Phys. Rev. Lett. 128, 091302 (2022), arXiv:2201.07682 [astro-ph.CO]
+* J. R. Eskilt, arXiv preprint (2022), arXiv:2201.13347 [astro-ph.CO]
 
 # How Do I Run It?
 
-There is a lot you need before being able to reproduce the results. Here, we outline all the steps that need to be done
+There is a lot you need before being able to reproduce the results. Here, we outline all the steps that need to be done.
 
 ## 1) Getting the data
 First, you need the Planck and WMAP maps. The detector split maps of Planck Data Release 4 (NPIPE) can be found on NERSC.
@@ -54,7 +61,7 @@ Please also read the comments in `run_cosmic_birefringence_analysis.py` to get a
 understanding of what the different parameters in the `params` variable do.
 
 `cb.py` outputs a chain file in the `chains` folder that you are free to do all your analysis on.
-It also creates a corner plot that can be found in `img/`
+It also creates a corner plot that can be found in `img/`.
 
 ## Anything not working?
 Please let me know if you run into any problems or if anything is unclear!
@@ -63,4 +70,4 @@ You can either open a GitHub issue, or contact me on j.r.eskilt@astro.uio.no
 
 ## Citation
 
-Feel free to use this code as you see fit, but please cite arXiv:2205.xxxxx if you use it for published results
+Feel free to use this code as you see fit, but please cite arXiv:2205.xxxxx if you use it for published results.
