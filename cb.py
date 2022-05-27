@@ -42,7 +42,7 @@ class cosmic_birefringence:
 		print('Number of alphas:', len(self.params['initial_alphas']))
 			
 		# Get f_sky	
-		if self.params['data_set'] == 'cl_wmap_hfi_lfi':
+		if self.params['data_set'] == 'cl_wmap_hfi_lfi' or self.params['data_set'] == 'cl_hfi':
 			index = self.params['index']
 			if index != -1:
 				print('Using hfi/lfi ps mask with CO. Index:', index)

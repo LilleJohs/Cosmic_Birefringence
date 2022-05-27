@@ -5,7 +5,6 @@ weightfile =
 weightfilep = 
 weightfile2 = 
 weightfilep2 = 
-tolerance = 1.e-6
 thetamax = NO
 beam_file = NO
 beam_file2 = NO

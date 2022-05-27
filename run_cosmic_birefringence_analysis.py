@@ -42,23 +42,25 @@ params = {
 
 
   # Beta model
-
+	# To sample the frequency dependence of beta, change this to true and uncomment the following lines
 	'frequency_dependent_beta': False,
 	#'beta_model': 'power', # sample n and beta_0 in the power law beta = beta_0(nu/nu_0)^n
 	#'nu_0': 150, # in n
 	#'flat_n_prior': 3, # Flat prior on |n|
-	#'frequency_list_beta_power_law': np.array([30, 44, 23, 41, 61, 70, 94, 94, 100, 143, 217, 353]), # list of frequencies
+	#'frequency_list_beta_power_law': np.array([30, 44, 23, 41, 61, 70, 94, 94, 100, 143, 217, 353]), # list of frequencies, make sure the order is correct
 	#'frequency_beta_split_AB': { # K and Ka are grouped together as one freuqnecy band. So we need to tell cb.py that they are different frequencies
 	#	2: np.array([23, 33])
 	#},
 	
   # EB-modeling parameters
-	'psi_l': 'psi_l_sigma15.npy',
+	'psi_l': 'psi_l_sigma15.npy', # The psi_ell file that you need to generate
 	'number_of_A': 4, # Number of A_ell bins
+
 	# The x number of bands are not dust dominated
 	'turn_off_for_lowest_indices': 6, # In the list of bands (freq variable above), the first 6 bands are synch dominated. So we dont model dust EB for them
 	'upper_bound_A': 1.0, # 0 <= A_ell <= 1
 
+	# If you dont want to model the EB of dust, uncomment these lines and comment the lines above
 	#'psi_l': '',
 	#'number_of_A': 0,
 }
@@ -86,5 +88,9 @@ for i, mask in enumerate(mask_percent):
 	fig_name = 'wmap_planck_dust_eb_modelled'
 
 	cur_mean, cur_upper, cur_lower = a.run_sampler(it=iterations[i], burnin=5000, fig_name=fig_name, no_beta=False)
+	saved[i, :, 0] = cur_mean
+	saved[i, :, 1] = cur_upper
+	saved[i, :, 2] = cur_lower
 
+np.save('results.npy', saved)
 print('*** JOB FINISHED ***')
