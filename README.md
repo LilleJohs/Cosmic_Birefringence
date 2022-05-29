@@ -60,13 +60,15 @@ Please also read the comments in `run_cosmic_birefringence_analysis.py` to get a
 understanding of what the different parameters in the `params` variable do.
 
 `cb.py` outputs a chain file in the `chains` folder that you are free to do all your analysis on.
-It also creates a corner plot that can be found in `img/`.
+It also creates a corner plot that can be found in `img/`. If you let the analysis run on both masks,
+it outputs a file `results.py` that gives the mean and error bars of all sampled parameters.
 
-## Anything not working?
+## Is something not working?
 Please let me know if you run into any problems or if anything is unclear!
 
 You can either open a GitHub issue, or contact me on j.r.eskilt@astro.uio.no
 
 ## Citation
 
-Feel free to use this code as you see fit, but please cite arXiv:2205.xxxxx if you use it for published results.
+Feel free to use the code as you see fit, but if you use it for published results, please cite
+* arXiv:2205.xxxxx

@@ -33,7 +33,7 @@ params = {
 	'flat_alpha_prior': 5.0, # |alpha_i| < 5
 	'cl_folder': '',
 	'index': -1,
-	'with_ln_det_cov': True,
+	'with_ln_det_cov': True, # is ln(det(M_b)) in the likelihood?
 
 	# Backend should be true if doing WMAP + Planck since it is slow and you have to be careful about
 	# convergence. If you only do HFI, it should be pretty quick to do a lot of samples quickly and you can
@@ -64,6 +64,9 @@ params = {
 	#'psi_l': '',
 	#'number_of_A': 0,
 }
+
+# Make sure we have the correct number of sampled parameters
+# 30 and 44 GHz have one miscalibration angle
 number_of_sampled_params = 2*params['nob'] - len(params['alpha_no_split_list']) + params['number_of_A']
 if params['frequency_dependent_beta']:
 	if params['beta_model'] == 'power':
