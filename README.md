@@ -1,6 +1,6 @@
 # Cosmic Birefringence
 
-This code reproduces the results of arXiv:2205.xxxxx where Planck and WMAP polarization data are jointly sampled
+This code reproduces the results of arXiv:2205.13962 where Planck and WMAP polarization data are jointly sampled
 to measure the cosmic birefringence angle. The details behind the method of analysis can be found in 
 
 * Y. Minami et al., Progress of Theoretical and Experimental Physics 2019, 083E02 (2019), arXiv:1904.12440 [astro-ph.CO]
@@ -71,4 +71,4 @@ You can either open a GitHub issue, or contact me on j.r.eskilt@astro.uio.no
 ## Citation
 
 Feel free to use the code as you see fit, but if you use it for published results, please cite
-* arXiv:2205.xxxxx
+* J. R. Eskilt and E. Komatsu, arXiv preprint (2022), arXiv:2205.13962 [astro-ph.CO]
