@@ -8,7 +8,7 @@ to measure the cosmic birefringence angle. The details behind the method of anal
 arXiv:2006.15982 [astro-ph.CO]
 * Y. Minami and E. Komatsu, Phys. Rev. Lett. 125, 221301 (2020), arXiv:2011.11254 [astro-ph.CO]
 * Diego-Palazuelos et al., Phys. Rev. Lett. 128, 091302 (2022), arXiv:2201.07682 [astro-ph.CO]
-* J. R. Eskilt, arXiv preprint (2022), arXiv:2201.13347 [astro-ph.CO]
+* J. R. Eskilt, A&A 662, A10 (2022), arXiv:2201.13347 [astro-ph.CO]
 
 # How Do I Run It?
 
@@ -71,4 +71,4 @@ You can either open a GitHub issue, or contact me on j.r.eskilt@astro.uio.no
 ## Citation
 
 Feel free to use the code as you see fit, but if you use it for published results, please cite
-* J. R. Eskilt and E. Komatsu, arXiv preprint (2022), arXiv:2205.13962 [astro-ph.CO]
+* J. R. Eskilt and E. Komatsu, Phys. Rev. D 106, 063503 (2022), arXiv:2205.13962 [astro-ph.CO]
